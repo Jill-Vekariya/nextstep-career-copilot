@@ -29,4 +29,35 @@ The suite uses five fictional resume and job-description pairs. Run `npm run eva
 
 ## Running the suite
 
-The runner first checks that the selected model supports `generateContent` for the configured Google project. It saves per-case JSON under `evaluation-results/` and writes the execution time, model, score and validation outcome below. Keep personal resumes and credentials out of the repository.
+With a local key, the runner checks model access against the Google project before generation. With `--url https://nextstep-career-copilot.vercel.app/`, it calls the deployed server, whose key remains in Vercel. It records setup failures, per-case errors and timings as well as successful reports. Reports are saved under `evaluation-results/`; the execution record is written below. Keep personal resumes and credentials out of the repository.
+
+## Setup checks
+
+| Command | Observed outcome |
+| --- | --- |
+| `npm run evaluate` | Exited 1: the local environment had no `GEMINI_API_KEY`. |
+| `npm run evaluate -- --url https://nextstep-career-copilot.vercel.app/` | Exited 1: `/api/status` reported that the deployed server had no Gemini key configured. |
+
+Both checks stopped before generation. The five cases therefore have no provider-generated scores, and no live-analysis screenshots have been captured for this run.
+
+## Execution results
+
+Started: 2026-11-14T15:11:50.180Z
+
+Mode: deployed endpoint · Endpoint: https://nextstep-career-copilot.vercel.app
+
+Model: `gemini-3.8-flash` · Prompt: Evidence first v2
+
+Setup: Blocked: The deployed server has no GEMINI_API_KEY configured.
+
+Generation attempts: 0 · Successful reports: 0/5
+
+| Case | Status | Coaching score | Duration (ms) | Findings / failure |
+| --- | --- | --- | --- | --- |
+| Software engineer | Not run | — | — | Blocked: The deployed server has no GEMINI_API_KEY configured. |
+| Fresh graduate | Not run | — | — | Blocked: The deployed server has no GEMINI_API_KEY configured. |
+| Career changer | Not run | — | — | Blocked: The deployed server has no GEMINI_API_KEY configured. |
+| Pharma & regulatory | Not run | — | — | Blocked: The deployed server has no GEMINI_API_KEY configured. |
+| Different career fit | Not run | — | — | Blocked: The deployed server has no GEMINI_API_KEY configured. |
+
+Inputs: five fictional resume/job-description pairs. A passed case means a real provider response passed schema, score-bound, exact-quotation and missing-keyword validation. Coaching usefulness and factual preservation still need a separate content assessment.
