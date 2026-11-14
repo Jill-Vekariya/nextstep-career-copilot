@@ -62,7 +62,7 @@ The backend suite covers schema validation, exact evidence, keyword checks, boun
 4. Set `GEMINI_MODEL` if selecting another model available to your Google project.
 5. Deploy, then open the live app and analyze a resume. Redeploy after changing server variables.
 
-To enable deployment on pushes, connect this repository under the existing Vercel project's **Settings → Git**, with `main` as the production branch. The GitHub build workflow runs the backend checks and static build on pushes and pull requests.
+The existing Vercel project is connected to `Jill-Vekariya/nextstep-career-copilot` for Git deployments. Pushes to `main` trigger production deployments. The GitHub build workflow runs the backend checks and static build on pushes and pull requests. Both the Vercel project and GitHub checks use Node.js 24.
 
 ## Privacy and implementation
 
