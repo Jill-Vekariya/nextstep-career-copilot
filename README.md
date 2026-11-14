@@ -1,85 +1,80 @@
 # NextStep — AI Career Copilot
 
-A responsive resume coaching product built for the ApnoAI advanced assignment. It compares a resume with a target job description using Google Gemini and gives evidence-backed feedback.
+Resume coaching by **Jill Vekariya**, built around job-specific evidence, practical revisions and clear next steps.
 
-Live app: https://nextstep-career-copilot.vercel.app/
+[Live app](https://nextstep-career-copilot.vercel.app/) · [Source code](https://github.com/Jill-Vekariya/nextstep-career-copilot)
 
-Source: https://github.com/Jill-Vekariya/nextstep-career-copilot
+## Product preview
 
-**Current live state:** deployed and publicly accessible in sample mode. Configure the Gemini server secret and redeploy to activate real analysis. The initial deployment was uploaded directly to Vercel; automatic Git deployments require linking this repository to the Vercel project.
+![NextStep resume studio with a black and cyan theme](public/screenshots/resume-studio.jpg)
 
-## Advanced features
+![Versioned career-coaching prompts](public/screenshots/prompt-lab.jpg)
 
-- **PDF/TXT import:** self-hosted PDF.js extracts text locally, up to 5 MB and 15 pages. Scanned/image-only PDFs need OCR, which is not included.
-- **Prompt versioning:** Foundation v1 and Evidence first v2; prompts live in `lib/prompts.js`, never supplied by the client.
-- **Optional local report history:** up to 10 reports, including quoted excerpts; never saves original resume/JD input. Per-report and bulk deletion.
-- **English/Hindi feedback:** original evidence and job keywords stay in their source language.
-- **Report export:** Print / Save as PDF through the browser, plus JSON download.
-- **Dark mode**, responsive layout, career-track presets, five fictional resume/JD fixtures and a clearly labeled handwritten sample report.
-- **Server-side Gemini key**, JSON schema, nested response validation, quote/keyword verification, bounded inputs, timeouts and friendly errors.
+## Features
 
-The coaching score is a weighted model estimate (skills 40 + experience 30 + impact 20 + clarity 10), **not a real ATS score or hiring prediction**. No achievements or metrics should be invented. Verify every suggestion yourself.
+- PDF and TXT resume import, with PDF text extraction in the browser.
+- Resume-to-job comparison using Google Gemini and a structured report schema.
+- Exact evidence quotes, checked missing keywords, prioritized edits and suggested rewrites.
+- Foundation v1 and Evidence first v2 prompts, plus five career-track presets.
+- English and Hindi feedback.
+- Optional device-local report history, PDF printing and JSON export.
+- Black and cyan default theme, a cyan light theme, and responsive layouts.
 
-## Run locally
+The coaching rubric totals 100 points: skills evidence 40, relevant experience 30, demonstrated impact 20 and document clarity 10. It supports candidate self-review; it is not a commercial ATS score or a hiring prediction.
 
-Requires Node.js 22 or later and npm. Node 24 was used for verification.
+## Local setup
+
+Use Node.js 22 or later.
 
 ```sh
 npm ci
 npm run build
 cp .env.example .env.local
-# Edit .env.local with your own key; never commit this file.
 npm run dev
 ```
 
-Open the localhost URL/port for your environment (default port 3000). You can explore the illustrative sample without a key. PDF.js assets are generated during `npm run build`.
+Set these server variables in `.env.local` for development, or in Vercel for deployment:
+
+| Variable | Purpose |
+| --- | --- |
+| `GEMINI_API_KEY` | Required Google Gemini API key; store as a server secret. |
+| `GEMINI_MODEL` | Optional model override. Default: `gemini-3.8-flash`. |
+
+Google lists `gemini-3.8-flash` with structured-output support in its [model documentation](https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash). Model access and quotas depend on the configured Google project.
+
+## Validation and evaluation
 
 ```sh
-npm test       # backend validation and mocked-provider checks
-npm run evaluate  # five live fictional fixtures; requires a real key
+npm test
+npm run build
+npm run evaluate
 ```
 
-Live evaluation output is written to ignored `evaluation-results/`. Review scores, specificity, unsupported claims, truthful rewrites and language quality manually. Do not represent mocked tests as live Gemini tests.
+The backend suite covers schema validation, exact evidence, keyword checks, bounded scoring, provider error responses and request controls. The evaluation command uses the configured Gemini key, checks model access and writes five structured reports plus a results table to `docs/EVALUATION.md`. See [the evaluation cases](docs/EVALUATION.md) and [verification evidence](docs/VERIFICATION.md).
 
-## Deploy on Vercel + GitHub
+## Vercel deployment
 
-1. Create a GitHub repository named `ai-career-copilot-girish`. Upload the **contents** of this project (not its parent folder, `node_modules`, `.env.local`, `.vercel` or test output). The provided ZIP includes `package.json`, `vercel.json`, `api/`, `lib/`, `public/`, scripts and tests.
-2. In Vercel, choose **Add New → Project**, import that repository, and select **Other** for the framework. `vercel.json` supplies `npm run build` and `public` as the output directory; `api/*.js` provides Node functions.
-3. Add `GEMINI_API_KEY` as a **Secret** for Production (and a separate Preview value if your policy requires one). Enter the key directly in Vercel, not in ChatGPT or browser HTML.
-4. Optionally set `GEMINI_MODEL` as Config to a `generateContent`-capable model available in your AI Studio project. Default: `gemini-3.8-flash`. Availability, quotas and free-tier eligibility vary by project/model. This project's default model has not been tested with your account.
-5. Deploy. For secret changes after deployment, redeploy. Open the live URL, ensure the top bar says Gemini configured, and run a fictional sample. That status only confirms a key exists; a successful analysis confirms provider access.
-6. Run five live evaluations (or use the five sample pairs in the UI), record your observations in `docs/EVALUATION.md`, and take screenshots. Finally test the deployed URL in a private browser session.
+1. Use the `Jill-Vekariya/nextstep-career-copilot` repository.
+2. Select **Other** as the framework. The tracked configuration sets `npm run build`, the `public` output directory and Node API functions under `api/`.
+3. Add `GEMINI_API_KEY` as a **Secret** for Production. Store credentials only in server environment variables.
+4. Set `GEMINI_MODEL` if selecting another model available to your Google project.
+5. Deploy, then open the live app and analyze a resume. Redeploy after changing server variables.
 
-**CLI alternative**, once authenticated to your own Vercel account: inspect the intended project/team, link this exact project, add the secret using Vercel's secure prompt, and deploy with `vercel --prod`. Do not pass secrets as command arguments. See current Vercel CLI help for flags.
+To enable deployment on pushes, connect this repository under the existing Vercel project's **Settings → Git**, with `main` as the production branch. The GitHub build workflow runs the backend checks and static build on pushes and pull requests.
 
-## Security and privacy
+## Privacy and implementation
 
-`process.env.GEMINI_API_KEY` is used **only in server code**. Writing it into static HTML would neither work correctly nor protect it. The browser talks to `/api/analyze`; only the server talks to Google. No API key belongs in the public repository or downloaded report.
+Only the server sends requests to Gemini. PDF extraction runs locally; pressing Analyze sends resume text and the job description for processing. Use documents you have permission to share and remove unnecessary personal details. The app does not intentionally store raw resume or job-description input. Optional browser history contains the generated report and quoted excerpts, and can be deleted from Saved reports.
 
-PDFs are parsed on the device. Clicking Analyze sends extracted resume text and the job description to this app's server and Google Gemini. Remove unnecessary personal details, use resumes with permission, and review your Gemini account's terms before submitting sensitive data. The app does not intentionally persist raw input or log it, but hosting/AI providers process requests under their own policies. Saved reports contain excerpts and must be deleted on shared devices.
+The browser renders returned content as text. The API enforces input size limits, response schema and evidence checks, timeouts and a per-instance request limit. For larger public usage, configure distributed rate limiting and provider quota controls.
 
-The memory-based request limit is **best effort per function instance**, not a distributed abuse barrier. For a public launch, configure Vercel Firewall/rate limiting and provider spending/quota controls. Origin checks are defense in depth, not authentication. There is no account system or cross-device history. Content is rendered with `textContent`, not model HTML.
+| Folder | Contents |
+| --- | --- |
+| `public/` | Interface, sample cases, screenshots and generated PDF.js assets |
+| `api/` | Analysis and configuration-status endpoints |
+| `lib/` | Prompts, response schema, Gemini client and validation |
+| `scripts/` | Build, local development and live evaluation |
+| `tests/` | Backend checks |
+| `docs/` | Evaluation cases, verification evidence and submission links |
 
-## Project layout
-
-- `public/`: frontend, sample fixtures and local PDF.js assets.
-- `api/analyze.js`: Vercel server endpoint.
-- `api/status.js`: configuration presence only; no secrets returned.
-- `lib/`: prompts, schema, validation and Gemini REST integration.
-- `tests/`: Node built-in tests using a mocked provider.
-- `docs/`: evaluation and submission notes.
-
-## Verified and pending
-
-See `docs/VERIFICATION.md`. This package does not contain a Gemini API key. Live AI and five real-resume evaluations still require an owner-provided key and human review. Vercel production deployment and anonymous access have been verified.
-
-## Official references
-
-- Gemini API: https://aistudio.google.com/api-reference/generate-content/generate-content
-- Gemini models: https://aistudio.google.com/docs/models
-- API key setup: https://aistudio.google.com/apikey
-- Vercel environment variables: https://vercel.com/docs/environment-variables
-- Vercel Node.js functions: https://vercel.com/docs/functions/runtimes/node-js
-- Vercel project import: https://vercel.com/new
-
-PDF.js is Apache-2.0; its license is copied to `public/vendor/PDFJS-LICENSE.txt` during build.
+PDF.js uses the Apache-2.0 license, copied to `public/vendor/PDFJS-LICENSE.txt` during the build.
