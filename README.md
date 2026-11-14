@@ -4,6 +4,14 @@ Resume coaching by **Jill Vekariya**, built around job-specific evidence, practi
 
 [Live app](https://nextstep-career-copilot.vercel.app/) · [Source code](https://github.com/Jill-Vekariya/nextstep-career-copilot)
 
+## Live analysis
+
+The deployed app uses a server-side Gemini secret. Five live evaluations passed schema and evidence validation with `gemini-3.5-flash-lite`; earlier provider failures and the prompt refinements are recorded in [the evaluation report](docs/EVALUATION.md). Inputs are fictional test resumes; the screenshots below show real Gemini responses, separate from the built-in illustrative report.
+
+![Live Gemini analysis: resume and coaching score](public/screenshots/nextstep-live-overview.jpg)
+
+![Live Gemini advice, rewrites and model provenance](public/screenshots/nextstep-live-details.jpg)
+
 ## Product preview
 
 ![NextStep resume studio with a black and cyan theme](public/screenshots/resume-studio.jpg)
@@ -38,9 +46,9 @@ Set these server variables in `.env.local` for development, or in Vercel for dep
 | Variable | Purpose |
 | --- | --- |
 | `GEMINI_API_KEY` | Required Google Gemini API key; store as a server secret. |
-| `GEMINI_MODEL` | Optional model override. Default: `gemini-3.8-flash`. |
+| `GEMINI_MODEL` | Optional model override. Default: `gemini-3.5-flash-lite`. |
 
-Google lists `gemini-3.8-flash` with structured-output support in its [model documentation](https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash). Model access and quotas depend on the configured Google project.
+Google lists `gemini-3.5-flash-lite` with structured-output support in its [model documentation](https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash-lite). Model access and quotas depend on the configured Google project.
 
 ## Validation and evaluation
 
@@ -67,6 +75,8 @@ The existing Vercel project is connected to `Jill-Vekariya/nextstep-career-copil
 ## Privacy and implementation
 
 Only the server sends requests to Gemini. PDF extraction runs locally; pressing Analyze sends resume text and the job description for processing. Use documents you have permission to share and remove unnecessary personal details. The app does not intentionally store raw resume or job-description input. Optional browser history contains the generated report and quoted excerpts, and can be deleted from Saved reports.
+
+Transient provider HTTP 5xx errors receive at most one retry within a shared 90-second deadline. Authentication, quota and evidence failures are not retried automatically. Gemini 3 requests use low thinking, and the Vercel function has a 120-second maximum duration.
 
 The browser renders returned content as text. The API enforces input size limits, response schema and evidence checks, timeouts and a per-instance request limit. For larger public usage, configure distributed rate limiting and provider quota controls.
 
