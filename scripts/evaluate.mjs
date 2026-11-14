@@ -8,7 +8,7 @@ try{process.loadEnvFile('.env.local');}catch{}
 const {values}=parseArgs({options:{url:{type:'string'}}});
 const key=process.env.GEMINI_API_KEY;
 const target=values.url||process.env.EVALUATION_URL;
-const model=process.env.GEMINI_MODEL||'gemini-3.8-flash';
+const model=process.env.GEMINI_MODEL||'gemini-3.5-flash-lite';
 let targetOrigin='';try{if(target)targetOrigin=new URL(target).origin;}catch{targetOrigin='invalid endpoint';}
 const started=new Date();const mode=target?'deployed endpoint':'direct Gemini';
 const rows=[];let failed=0,generationAttempts=0,setup='Passed',usedModel=model;
