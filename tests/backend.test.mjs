@@ -22,6 +22,19 @@ test('Successful mocked provider response uses server header, schema and separat
 });
 for(const code of [400,403,404,429,503])test(`Provider HTTP ${code} produces safe error`,async()=>{await assert.rejects(()=>generateReport(input,{apiKey:'test',fetcher:async()=>({ok:false,status:code})}),e=>!e.message.includes('test-secret')&&e.status===(code===429?429:502));});
 test('Truncated and malformed provider output rejected',async()=>{for(const candidate of [{finishReason:'MAX_TOKENS'},{finishReason:'STOP',content:{parts:[{text:'invalid'}]}}])await assert.rejects(()=>generateReport(input,{apiKey:'test',fetcher:async()=>({ok:true,json:async()=>({candidates:[candidate]})})}));});
+test('Retries a transient provider failure once, then validates the real response',async()=>{
+ let calls=0,pauses=0;
+ const result=await generateReport(input,{apiKey:'test-secret',pause:async()=>{pauses++;},fetcher:async(_url,options)=>{
+  calls++;assert.equal(JSON.parse(options.body).generationConfig.thinkingConfig.thinkingLevel,'low');
+  return calls===1?{ok:false,status:503}:{ok:true,json:async()=>({candidates:[{finishReason:'STOP',content:{parts:[{text:JSON.stringify(good())}]}}]})};
+ }});assert.equal(calls,2);assert.equal(pauses,1);assert.equal(result.report.score,76);
+});
+test('Does not retry quota errors and stops after two transient failures',async()=>{
+ for(const [code,expectedCalls] of [[429,1],[503,2]]){let calls=0;
+  await assert.rejects(()=>generateReport(input,{apiKey:'test-secret',pause:async()=>{},fetcher:async()=>{calls++;return {ok:false,status:code};}}),e=>e.message.includes(`Provider HTTP ${code}`)&&!e.message.includes('test-secret'));
+  assert.equal(calls,expectedCalls);
+ }
+});
 function response(){return {headers:{},statusCode:200,setHeader(k,v){this.headers[k]=v;},status(s){this.statusCode=s;return this;},json(v){this.data=v;return this;}};}
 test('API rejects GET, cross-origin, invalid JSON and oversized bodies',async()=>{
  for(const [req,code] of [[{method:'GET',headers:{}},405],[{method:'POST',headers:{origin:'https://other.example',host:'app.example','content-type':'application/json'}},403],[{method:'POST',headers:{'content-type':'application/json'},body:'{'},400],[{method:'POST',headers:{'content-type':'application/json'},body:'x'.repeat(81000)},413]]){const res=response();await handler(req,res);assert.equal(res.statusCode,code);assert.equal(res.headers['Cache-Control'],'no-store');}
