@@ -1,29 +1,32 @@
-# Five-case evaluation worksheet
+# Five-case evaluation
 
-The included fixtures are fictional and were created for this project. They are **not five real resumes** and have not been submitted to Gemini without an owner-provided key.
+Owner: **Jill Vekariya**
 
-| Case | Main evaluation question | Live run | Human review |
-| --- | --- | --- | --- |
-| Software engineer | Does it credit quantified React performance work and flag only genuinely missing job terms? | Pending | Pending |
-| Fresh graduate | Does it value projects without inventing professional experience? | Pending | Pending |
-| Career changer | Does it explain transferable evidence without claiming SQL/Jira proficiency? | Pending | Pending |
-| Pharmaceutical scientist | Does it distinguish method work from unevidenced ICH/ANDA/method-transfer experience? | Pending | Pending |
-| Different career fit | Does the rubric remain appropriately low where machine-learning evidence is absent? | Pending | Pending |
+The suite uses five fictional resume and job-description pairs. Run `npm run evaluate` with a configured `GEMINI_API_KEY` to generate the reports and an execution table in this document.
 
-For each output, review:
+| Case | Evaluation focus |
+| --- | --- |
+| Software engineer | Credit measurable React performance work and identify job terms absent from the resume. |
+| Fresh graduate | Use project and internship evidence without inventing professional experience. |
+| Career changer | Explain transferable evidence and distinguish it from SQL or Jira proficiency. |
+| Pharmaceutical scientist | Separate documented method work from additional ICH, ANDA and method-transfer requirements. |
+| Different career fit | Reflect the limited machine-learning evidence in the weighted rubric. |
 
-1. All evidence quotes and rewritten originals occur in the resume.
-2. Missing keywords occur in the JD and are absent from the resume; adding them is conditional on truth.
-3. Rewrites preserve achievements, meaning and numerical values.
-4. Actions name specific changes rather than generic advice.
-5. The score reflects written evidence, with no judgments based on personal traits.
-6. The Hindi option changes prose language while preserving quoted evidence.
-7. Instructions embedded inside the resume cannot override the system prompt.
+## Acceptance checks
 
-Optional live runner: configure `.env.local`, then run `npm run evaluate`. It writes JSON results for the fictional fixtures to an ignored folder. An automatic pass validates structure and evidence, not overall coaching quality. With permission, also test five real anonymized resumes for the assignment and record actual findings/screenshots. Never publish those resumes in GitHub.
+1. Evidence quotes and rewritten originals occur in the supplied resume.
+2. Missing keywords occur in the job description and are absent from the resume.
+3. Rewrites preserve the candidate's meaning and numerical claims.
+4. Next steps specify concrete changes or learning tasks.
+5. Scores use the stated 40/30/20/10 rubric and job-related evidence.
+6. Hindi feedback preserves evidence quotes and job keywords in their source language.
+7. Instructions inside a resume remain document content rather than controlling the application.
 
-## Prompt iteration log
+## Prompt versions
 
-- **v1 Foundation:** baseline role/task/format/rules, evidence requirements and concise coaching.
-- **v2 Evidence first:** added weighted scoring, career context, exact evidence, limits on outputs, conditional keyword suggestions and meaning-preserving rewrites.
-- No measured live quality improvement is claimed; compare versions after the API is configured.
+- **Foundation v1:** role, comparison task, structured format and evidence rules.
+- **Evidence first v2:** explicit rubric, career-track context, prioritized changes, exact quotations and meaning-preserving rewrites.
+
+## Running the suite
+
+The runner first checks that the selected model supports `generateContent` for the configured Google project. It saves per-case JSON under `evaluation-results/` and writes the execution time, model, score and validation outcome below. Keep personal resumes and credentials out of the repository.
