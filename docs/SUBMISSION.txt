@@ -1,0 +1,8 @@
+Project: NextStep — AI Career Copilot
+Live Vercel URL: https://nextstep-career-copilot.vercel.app/
+GitHub repository: https://github.com/Jill-Vekariya/nextstep-career-copilot
+Prompt style: Evidence first v2 — ROLE + TASK + FORMAT + RULES.
+Description: Evidence-led resume coaching with local PDF parsing, English/Hindi feedback, prompt versioning, optional report history, dark mode and PDF/JSON export.
+AI usage: Used ChatGPT to implement the app, structure prompts, add response validation and prepare tests.
+Advanced features: PDF upload, prompt versioning, optional history, multi-language feedback, PDF/JSON export, dark mode.
+Before submission: configure the Gemini secret, run successful live analyses, evaluate five real anonymized resumes with permission, test the production URL in a private window, and verify both links above. The current live app is in SAMPLE MODE until the Gemini key is configured. Bonus XP is determined by the mentor.
