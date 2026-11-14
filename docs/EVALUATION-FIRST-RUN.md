@@ -38,7 +38,7 @@ With a local key, the runner checks model access against the Google project befo
 | `npm run evaluate` | Exited 1: the local environment had no `GEMINI_API_KEY`. |
 | `npm run evaluate -- --url https://nextstep-career-copilot.vercel.app/` | Exited 1: `/api/status` reported that the deployed server had no Gemini key configured. |
 
-Both checks stopped before generation. The five cases therefore have no provider-generated scores, and no live-analysis screenshots have been captured for this run.
+Those initial setup checks stopped before generation. The execution table below records the first subsequent live run after the production secret was configured.
 
 ## Execution results
 
@@ -61,3 +61,7 @@ Generation attempts: 5 · Successful reports: 1/5
 | Different career fit | Failed | — | 2453 | Gemini is temporarily unavailable. Please try again. |
 
 Inputs: five fictional resume/job-description pairs. A passed case means a real provider response passed schema, score-bound, exact-quotation and missing-keyword validation. Coaching usefulness and factual preservation still need a separate content assessment.
+
+## Follow-up diagnostic
+
+A second diagnostic used low thinking, one retry on transient HTTP 5xx failures and a 90-second provider deadline. Software engineer still timed out. The suite was stopped while the next case was in flight, before its result was received, to switch models. This interrupted diagnostic is not counted as a completed five-case run. A separate software-engineer browser request also timed out. No passing result is inferred from either interrupted or timed-out request.
