@@ -1,0 +1,72 @@
+{
+  "report": {
+    "summary": "Jordan Lee brings solid customer support leadership and cross-functional collaboration experience well-suited for a pivot to product operations. Strengthening technical evidence around SQL and metrics tracking will enhance the profile.",
+    "category_scores": {
+      "skills": 25,
+      "experience": 22,
+      "impact": 15,
+      "clarity": 9
+    },
+    "strengths": [
+      {
+        "point": "Demonstrated cross-functional collaboration with product teams",
+        "evidence": "Grouped recurring customer issues and shared weekly findings with product managers."
+      },
+      {
+        "point": "Strong process improvement and metric-driven impact",
+        "evidence": "Reduced first-response time from 12 hours to 5 hours by redesigning ticket triage."
+      }
+    ],
+    "keyword_gaps": [
+      {
+        "keyword": "SQL",
+        "reason": "Mentioned in the job description as a required tool for data extraction.",
+        "action": "Add if you have practical experience, or note ongoing learning in your coursework."
+      },
+      {
+        "keyword": "Jira",
+        "reason": "Used heavily in product operations for tracking tasks and launches.",
+        "action": "Include if you have used Jira in past support workflows."
+      },
+      {
+        "keyword": "dashboards",
+        "reason": "Core to tracking adoption metrics in the target role.",
+        "action": "Highlight any dashboard creation or monitoring experience in your next revision."
+      }
+    ],
+    "improvements": [
+      {
+        "priority": "High",
+        "issue": "Lack of evidenced data querying tools like SQL",
+        "evidence": "Zendesk, Excel, stakeholder communication, process documentation, customer research.",
+        "action": "Add SQL or database tools to your skills section only if you possess verified proficiency."
+      }
+    ],
+    "rewrites": [
+      {
+        "original": "Grouped recurring customer issues and shared weekly findings with product managers.",
+        "revised": "Synthesized recurring customer feedback and shared weekly insights with product managers to guide feature development."
+      }
+    ],
+    "interview_questions": [
+      "How do you typically synthesize customer feedback from support tickets and communicate those insights to product managers?",
+      "Can you describe a time when you identified a process bottleneck and coordinated with stakeholders to resolve it?",
+      "Given your background in customer support, how would you approach tracking feature adoption metrics for a new product launch?"
+    ],
+    "plan": [
+      "Update the skills section to reflect any familiarity with Jira or dashboarding tools.",
+      "Refine bullet points to emphasize product operations terminology such as synthesizing feedback.",
+      "Prepare specific examples of how you collaborated with product teams in your current role."
+    ],
+    "score": 71
+  },
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "promptVersion": "v2",
+    "promptName": "Evidence first",
+    "language": "English",
+    "track": "changer",
+    "createdAt": "2026-11-14T19:21:38.121Z",
+    "source": "gemini"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "report": {
+    "summary": "Alex demonstrates solid frontend engineering experience with React and TypeScript, showing strong performance optimization skills. To better align with the job description, the resume should explicitly incorporate missing testing and accessibility tools like Playwright and WCAG.",
+    "category_scores": {
+      "skills": 32,
+      "experience": 24,
+      "impact": 16,
+      "clarity": 8
+    },
+    "strengths": [
+      {
+        "point": "Demonstrated performance optimization work",
+        "evidence": "Reduced dashboard load time from 4.2 seconds to 2.1 seconds by splitting bundles and caching API responses."
+      },
+      {
+        "point": "Relevant frontend stack alignment",
+        "evidence": "Built reusable React components and documented them for a team of six developers."
+      }
+    ],
+    "keyword_gaps": [
+      {
+        "keyword": "Playwright",
+        "reason": "Mentioned in the job description for automated testing but absent from the resume.",
+        "action": "Add Playwright to the skills section if you have experience using it, or build a small testing script to learn it."
+      },
+      {
+        "keyword": "WCAG",
+        "reason": "Key accessibility standard requested in the job description.",
+        "action": "Include WCAG in your skills or summary if you have applied these guidelines in your projects."
+      },
+      {
+        "keyword": "CI/CD",
+        "reason": "Preferred workflow experience listed in the job description.",
+        "action": "Mention any pipeline tools you have used in your current or past projects if applicable."
+      }
+    ],
+    "improvements": [
+      {
+        "priority": "High",
+        "issue": "Missing explicit mention of accessibility standards like WCAG.",
+        "evidence": "Frontend engineer with three years of experience building accessible web applications.",
+        "action": "Update your summary or experience bullet to explicitly reference WCAG guidelines if applicable."
+      },
+      {
+        "priority": "Medium",
+        "issue": "Project lacks details on technologies or outcomes.",
+        "evidence": "Built a TypeScript expense tracker with authentication and CSV export.",
+        "action": "Expand this project bullet to mention specific frameworks or libraries used alongside TypeScript."
+      }
+    ],
+    "rewrites": [
+      {
+        "original": "Built reusable React components and documented them for a team of six developers.",
+        "revised": "Engineered and documented reusable React components to support a team of six developers."
+      }
+    ],
+    "interview_questions": [
+      "How do you approach ensuring web applications meet WCAG accessibility standards?",
+      "Can you describe a time when you used bundle splitting and API caching to improve React performance?",
+      "How do you integrate automated testing tools like Jest and Playwright into your daily workflow?"
+    ],
+    "plan": [
+      "Add Playwright and WCAG to your skills section after verifying your familiarity with them.",
+      "Refine your project bullet to specify the UI libraries used alongside TypeScript.",
+      "Practice explaining your technical documentation process for reusable React components."
+    ],
+    "score": 80
+  },
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "promptVersion": "v2",
+    "promptName": "Evidence first",
+    "language": "English",
+    "track": "tech",
+    "createdAt": "2026-11-14T19:21:32.777Z",
+    "source": "gemini"
+  }
+}

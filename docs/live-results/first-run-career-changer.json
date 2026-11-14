@@ -1,0 +1,112 @@
+{
+  "report": {
+    "summary": "Jordan Lee shows relevant transferable experience bridging customer support and product operations through feedback synthesis and process optimization. To strengthen alignment with the Product Operations Associate role, the resume needs stronger evidence of technical analytics tools like SQL, workflow tracking in Jira, and direct involvement in product launches and cross-functional coordination.",
+    "category_scores": {
+      "skills": 22,
+      "experience": 18,
+      "impact": 12,
+      "clarity": 8
+    },
+    "strengths": [
+      {
+        "point": "Demonstrated practice translating user pain points for product partners",
+        "evidence": "Grouped recurring customer issues and shared weekly findings with product managers."
+      },
+      {
+        "point": "Demonstrated capability in operational triage redesign and efficiency",
+        "evidence": "Reduced first-response time from 12 hours to 5 hours by redesigning ticket triage."
+      },
+      {
+        "point": "Experience with documentation and process enablement",
+        "evidence": "Created onboarding checklists and trained new support specialists."
+      }
+    ],
+    "keyword_gaps": [
+      {
+        "keyword": "SQL",
+        "reason": "The job description specifically asks for comfort with SQL for data querying and operations analysis.",
+        "action": "If you have querying experience, add SQL to your skills list; otherwise, complete a foundational course and build a query project."
+      },
+      {
+        "keyword": "Jira",
+        "reason": "Jira is standard for issue tracking and cross-functional coordination between support and product teams.",
+        "action": "Add Jira if you used it to escalate or track tickets with engineering and product."
+      },
+      {
+        "keyword": "dashboards",
+        "reason": "Product operations associates frequently maintain metrics reporting and visibility.",
+        "action": "Highlight any experience building or managing operational dashboards in Excel or related tools."
+      },
+      {
+        "keyword": "product launches",
+        "reason": "Assisting with release readiness is a core expectation outlined in the role.",
+        "action": "Mention any past participation in preparing support readiness or documentation for feature rollouts."
+      },
+      {
+        "keyword": "adoption metrics",
+        "reason": "The role involves tracking how users engage with released product features.",
+        "action": "Include any experience monitoring customer usage, sentiment, or resolution metrics."
+      },
+      {
+        "keyword": "cross-functional communication",
+        "reason": "The role requires close collaboration across product, engineering, and operations stakeholders.",
+        "action": "Reframe communication bullets to specify collaboration across departments rather than internal team lead duties alone."
+      }
+    ],
+    "improvements": [
+      {
+        "priority": "High",
+        "issue": "Core analytical and project tooling requested by the employer is not evidenced.",
+        "evidence": "Zendesk, Excel, stakeholder communication, process documentation, customer research.",
+        "action": "Incorporate relevant technical proficiencies like SQL, Jira, or dashboarding tools if you have used them in past roles or projects."
+      },
+      {
+        "priority": "Medium",
+        "issue": "Feedback loop lacks clear operational mechanisms and launch involvement.",
+        "evidence": "Grouped recurring customer issues and shared weekly findings with product managers.",
+        "action": "Clarify the methodology used to synthesize feedback and how those weekly findings influenced product backlog priorities or launch readiness."
+      },
+      {
+        "priority": "Medium",
+        "issue": "Impact is currently framed solely around support responsiveness rather than broader operational scalability.",
+        "evidence": "Reduced first-response time from 12 hours to 5 hours by redesigning ticket triage.",
+        "action": "Mention the specific operational documentation or routing rules created to maintain this process improvement across the team."
+      }
+    ],
+    "rewrites": [
+      {
+        "original": "Grouped recurring customer issues and shared weekly findings with product managers.",
+        "revised": "Synthesized recurring customer issues and delivered weekly actionable findings to product managers."
+      },
+      {
+        "original": "Created onboarding checklists and trained new support specialists.",
+        "revised": "Authored onboarding process documentation and facilitated training for new support specialists."
+      },
+      {
+        "original": "Reduced first-response time from 12 hours to 5 hours by redesigning ticket triage.",
+        "revised": "Redesigned ticket triage workflows, decreasing first-response time from 12 hours to 5 hours."
+      }
+    ],
+    "interview_questions": [
+      "How have you structured customer feedback into quantifiable themes to influence product roadmaps or triage decisions?",
+      "Can you share an example of how you coordinated with product managers during a release or product update?",
+      "Which tools and metrics do you rely on to analyze operational bottlenecks and track process health?"
+    ],
+    "plan": [
+      "Add any verifiable experience with SQL, Jira, or dashboard tools to your skills list.",
+      "Reflect any cross-functional release readiness or launch coordination experience in your BrightDesk bullet points.",
+      "Develop a portfolio sample showing a synthesized customer feedback report with proposed process recommendations.",
+      "Tailor the summary statement to highlight workflow optimization, feedback synthesis, and cross-functional execution."
+    ],
+    "score": 60
+  },
+  "meta": {
+    "model": "gemini-3.8-flash",
+    "promptVersion": "v2",
+    "promptName": "Evidence first",
+    "language": "English",
+    "track": "changer",
+    "createdAt": "2026-11-14T19:08:33.162Z",
+    "source": "gemini"
+  }
+}

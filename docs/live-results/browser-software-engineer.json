@@ -1,0 +1,88 @@
+{
+  "report": {
+    "summary": "Alex brings solid frontend experience with React and performance optimization, aligning well with the core technical needs of the role. However, adding evidence of TypeScript usage in a professional setting, CI/CD, and specific accessibility standards like WCAG will strengthen the profile.",
+    "category_scores": {
+      "skills": 32,
+      "experience": 24,
+      "impact": 16,
+      "clarity": 9
+    },
+    "strengths": [
+      {
+        "point": "Demonstrated ability to improve web application performance.",
+        "evidence": "Reduced dashboard load time from 4.2 seconds to 2.1 seconds by splitting bundles and caching API responses."
+      },
+      {
+        "point": "Experience building and documenting reusable components.",
+        "evidence": "Built reusable React components and documented them for a team of six developers."
+      }
+    ],
+    "keyword_gaps": [
+      {
+        "keyword": "Playwright",
+        "reason": "Mentioned in the job description for automated testing alongside Jest.",
+        "action": "Add Playwright if you have used it in projects or testing workflows; otherwise, learn the tool and mention familiarity."
+      },
+      {
+        "keyword": "WCAG",
+        "reason": "Preferred requirement for building accessible web applications.",
+        "action": "Include WCAG guidelines if you applied them in your past frontend work."
+      },
+      {
+        "keyword": "CI/CD",
+        "reason": "Mentioned as a preferred skill for deployment and pipeline workflows.",
+        "action": "Add CI/CD experience if you have interacted with automated build and deployment pipelines."
+      }
+    ],
+    "improvements": [
+      {
+        "priority": "High",
+        "issue": "TypeScript is listed in skills and projects but not evidenced in professional experience.",
+        "evidence": "Built a TypeScript expense tracker with authentication and CSV export.",
+        "action": "Integrate TypeScript into your professional experience bullet points if used at Northline Software."
+      },
+      {
+        "priority": "Medium",
+        "issue": "Accessibility is mentioned in the summary but lacks specific standards or tools.",
+        "evidence": "Frontend engineer with three years of experience building accessible web applications.",
+        "action": "Mention specific accessibility standards like WCAG in your experience or summary."
+      },
+      {
+        "priority": "Low",
+        "issue": "Automated testing is limited to Jest in the current role.",
+        "evidence": "Wrote Jest tests and reviewed pull requests across the frontend team.",
+        "action": "Include other testing frameworks like Playwright if you have used them."
+      }
+    ],
+    "rewrites": [
+      {
+        "original": "Built reusable React components and documented them for a team of six developers.",
+        "revised": "Developed and documented reusable React components for a team of six developers."
+      },
+      {
+        "original": "Wrote Jest tests and reviewed pull requests across the frontend team.",
+        "revised": "Authored Jest tests and conducted code reviews for the frontend team."
+      }
+    ],
+    "interview_questions": [
+      "How do you approach optimizing application performance and reducing load times in large React applications?",
+      "Can you describe a time when you ensured a web application met accessibility standards?",
+      "How do you handle collaboration with design teams when implementing complex UI components?"
+    ],
+    "plan": [
+      "Update the resume to include professional TypeScript usage if applicable.",
+      "Add familiarity with CI/CD and WCAG standards if you have relevant experience.",
+      "Practice explaining your technical choices clearly in alignment with documentation practices."
+    ],
+    "score": 81
+  },
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "promptVersion": "v2",
+    "promptName": "Evidence first",
+    "language": "English",
+    "track": "tech",
+    "createdAt": "2026-11-14T19:17:14.770Z",
+    "source": "gemini"
+  }
+}

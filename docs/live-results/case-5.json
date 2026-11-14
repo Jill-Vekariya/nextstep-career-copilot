@@ -1,0 +1,84 @@
+{
+  "report": {
+    "summary": "The candidate has a retail background but lacks the technical machine learning, Python, PyTorch, and cloud infrastructure experience required for the Machine Learning Engineer role. Significant upskilling and project evidence are needed to bridge this gap.",
+    "category_scores": {
+      "skills": 5,
+      "experience": 5,
+      "impact": 0,
+      "clarity": 8
+    },
+    "strengths": [
+      {
+        "point": "Clear and concise document structure",
+        "evidence": "Sales Associate, Market Square, 2024–present."
+      }
+    ],
+    "keyword_gaps": [
+      {
+        "keyword": "Python",
+        "reason": "Core programming language required for building machine learning systems.",
+        "action": "Add Python to your skills only if you have completed relevant coursework or projects."
+      },
+      {
+        "keyword": "PyTorch",
+        "reason": "Primary deep learning framework requested in the job description.",
+        "action": "Build a PyTorch project and list it under a new projects section."
+      },
+      {
+        "keyword": "AWS",
+        "reason": "Cloud platform used to deploy models in production.",
+        "action": "Complete foundational AWS training and add it if you gain hands-on practice."
+      },
+      {
+        "keyword": "SQL",
+        "reason": "Essential for data extraction and querying in ML pipelines.",
+        "action": "Demonstrate SQL proficiency through data analysis projects."
+      },
+      {
+        "keyword": "MLOps",
+        "reason": "Required for deploying and monitoring machine learning models.",
+        "action": "Learn MLOps fundamentals and document any applied practices in a personal project."
+      },
+      {
+        "keyword": "statistics",
+        "reason": "Required for designing evaluation pipelines and analyzing model performance.",
+        "action": "Highlight statistics coursework or related academic projects."
+      }
+    ],
+    "improvements": [
+      {
+        "priority": "High",
+        "issue": "Lack of technical machine learning experience",
+        "evidence": "Retail associate with two years of experience helping customers and organizing store operations.",
+        "action": "Transition to a data or software engineering track, or build substantial ML projects to qualify for this specific role."
+      }
+    ],
+    "rewrites": [
+      {
+        "original": "Assisted customers with product selection and handled checkout transactions.",
+        "revised": "Delivered customer service during product selection and processed checkout transactions."
+      }
+    ],
+    "interview_questions": [
+      "How would you approach learning Python and PyTorch given your current business administration background?",
+      "Can you describe a hypothetical pipeline for deploying a machine learning model on AWS?",
+      "How do you plan to bridge the gap in applied machine learning experience for this role?"
+    ],
+    "plan": [
+      "Enroll in a certified Python and machine learning bootcamp.",
+      "Build an end-to-end machine learning project using PyTorch and SQL.",
+      "Deploy a model on AWS and document the MLOps pipeline.",
+      "Update the resume to include a dedicated Projects section highlighting your new technical skills."
+    ],
+    "score": 18
+  },
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "promptVersion": "v2",
+    "promptName": "Evidence first",
+    "language": "English",
+    "track": "general",
+    "createdAt": "2026-11-14T19:21:44.896Z",
+    "source": "gemini"
+  }
+}

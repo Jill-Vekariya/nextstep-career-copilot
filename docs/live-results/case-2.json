@@ -1,0 +1,67 @@
+{
+  "report": {
+    "summary": "Priya shows good foundational skills in Python and Pandas through academic projects, but needs to incorporate key tools like SQL and Power BI to fully align with the junior data analyst role.",
+    "category_scores": {
+      "skills": 28,
+      "experience": 20,
+      "impact": 12,
+      "clarity": 9
+    },
+    "strengths": [
+      {
+        "point": "Relevant technical stack mentioned",
+        "evidence": "Python, Pandas, Excel"
+      },
+      {
+        "point": "Academic project experience",
+        "evidence": "Analyzed 2,000 fictional retail transactions with Python and Pandas for a class project."
+      }
+    ],
+    "keyword_gaps": [
+      {
+        "keyword": "SQL",
+        "reason": "Required for preparing datasets and querying databases.",
+        "action": "Add SQL to your skills if you have learned it, or take a tutorial and mention a practice project."
+      },
+      {
+        "keyword": "Power BI",
+        "reason": "Needed for creating interactive dashboards as specified in the job description.",
+        "action": "Learn Power BI basics and build a small dashboard to list in your projects."
+      }
+    ],
+    "improvements": [
+      {
+        "priority": "High",
+        "issue": "Missing SQL skill required by the job description.",
+        "evidence": "Python, Pandas, Excel, basic statistics, presentation skills.",
+        "action": "Add SQL if you have experience with it, otherwise build a small project incorporating it."
+      }
+    ],
+    "rewrites": [
+      {
+        "original": "Analyzed 2,000 fictional retail transactions with Python and Pandas for a class project.",
+        "revised": "Analyzed 2,000 fictional retail transactions using Python and Pandas to identify trends for a class project."
+      }
+    ],
+    "interview_questions": [
+      "How do you handle missing values when cleaning a dataset using Pandas?",
+      "Can you walk us through how you built your Excel dashboard and what insights it provided?",
+      "How would you approach writing a complex SQL query to join two sales tables?"
+    ],
+    "plan": [
+      "Add SQL and Power BI to your skill set by completing online tutorials.",
+      "Update your project section to reflect any database or visualization tools you use.",
+      "Refine bullet points to emphasize your data cleaning and presentation process."
+    ],
+    "score": 69
+  },
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "promptVersion": "v2",
+    "promptName": "Evidence first",
+    "language": "English",
+    "track": "graduate",
+    "createdAt": "2026-11-14T19:21:35.312Z",
+    "source": "gemini"
+  }
+}

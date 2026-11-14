@@ -1,0 +1,96 @@
+{
+  "report": {
+    "summary": "Sam demonstrates solid foundational experience in analytical R&D, specifically in HPLC method development, validation, and stability testing. To align with the Senior Scientist role, the resume needs to explicitly incorporate relevant regulatory frameworks and submission terminology present in the job description while highlighting leadership or coordination aspects.",
+    "category_scores": {
+      "skills": 28,
+      "experience": 22,
+      "impact": 12,
+      "clarity": 8
+    },
+    "strengths": [
+      {
+        "point": "Direct experience with HPLC method development and validation",
+        "evidence": "Performed HPLC method development and validation for assay and related substances."
+      },
+      {
+        "point": "Familiarity with stability testing and investigations",
+        "evidence": "Supported stability testing and documented OOS investigations with the quality team."
+      },
+      {
+        "point": "Relevant advanced education in pharmaceutical analysis",
+        "evidence": "MSc Pharmaceutical Analysis, 2022."
+      }
+    ],
+    "keyword_gaps": [
+      {
+        "keyword": "ICH Q2(R2)",
+        "reason": "Specific regulatory guidance for validation required by the job description.",
+        "action": "Add to skills or experience if familiar with these specific guidelines; otherwise, review the guidance before applying."
+      },
+      {
+        "keyword": "ICH Q14",
+        "reason": "Required standard for analytical procedure development mentioned in the posting.",
+        "action": "Include if applied during method development projects, or note as a learning objective."
+      },
+      {
+        "keyword": "ANDA",
+        "reason": "Regulatory submission type expected for the senior role.",
+        "action": "Clarify any familiarity with regulatory filing sections if applicable."
+      },
+      {
+        "keyword": "data integrity",
+        "reason": "Core compliance requirement highlighted in the job description.",
+        "action": "Explicitly mention data integrity practices in laboratory documentation bullets if truthful."
+      },
+      {
+        "keyword": "method transfer",
+        "reason": "Key responsibility for the senior position.",
+        "action": "Add if you have participated in transferring methods to manufacturing or quality control sites."
+      }
+    ],
+    "improvements": [
+      {
+        "priority": "High",
+        "issue": "Lack of explicit mention of regulatory guidelines such as ICH Q2(R2) or ICH Q14.",
+        "evidence": "Performed HPLC method development and validation for assay and related substances.",
+        "action": "Incorporate specific regulatory guidelines into the validation bullet if applicable to your work."
+      },
+      {
+        "priority": "Medium",
+        "issue": "Absence of leadership or coordination keywords for a senior role.",
+        "evidence": "Supported stability testing and documented OOS investigations with the quality team.",
+        "action": "Highlight any leadership or cross-functional coordination tasks performed during OOS investigations."
+      }
+    ],
+    "rewrites": [
+      {
+        "original": "Performed HPLC method development and validation for assay and related substances.",
+        "revised": "Executed HPLC method development and validation for assay and related substances procedures."
+      },
+      {
+        "original": "Supported stability testing and documented OOS investigations with the quality team.",
+        "revised": "Collaborated with the quality team to support stability testing and document OOS investigations."
+      }
+    ],
+    "interview_questions": [
+      "Can you describe your experience with ICH guidelines during HPLC method validation?",
+      "How do you approach investigating out-of-specification (OOS) results alongside quality assurance teams?",
+      "What has your involvement been in coordinating analytical method transfers to other sites?"
+    ],
+    "plan": [
+      "Update the skills section with specific regulatory frameworks like ICH Q2(R2) if experienced.",
+      "Refine experience bullets to emphasize cross-functional coordination and technical documentation.",
+      "Prepare specific examples of handling OOS investigations and stability programs for upcoming interviews."
+    ],
+    "score": 70
+  },
+  "meta": {
+    "model": "gemini-3.5-flash-lite",
+    "promptVersion": "v2",
+    "promptName": "Evidence first",
+    "language": "English",
+    "track": "pharma",
+    "createdAt": "2026-11-14T19:21:41.758Z",
+    "source": "gemini"
+  }
+}
