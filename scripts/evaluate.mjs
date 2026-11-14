@@ -46,7 +46,7 @@ if(!process.exitCode){
   try{
    let result;
    if(target){
-    const response=await fetch(new URL('/api/analyze',target),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(input),signal:AbortSignal.timeout(60000)});
+    const response=await fetch(new URL('/api/analyze',target),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(input),signal:AbortSignal.timeout(110000)});
     const data=await response.json();if(!response.ok)throw new Error(data.error||`Analysis returned HTTP ${response.status}.`);
     if(data.meta?.source!=='gemini')throw new Error('The response is not a live Gemini analysis.');
     const report={...data.report};delete report.score;
