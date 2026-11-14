@@ -20,7 +20,7 @@ export default async function handler(req,res){
   if(Buffer.byteLength(raw)>80000) throw new AppError('Input is too large. Please shorten the documents.',413);
   let body;try{body=JSON.parse(raw);}catch{throw new AppError('Invalid JSON input.');}
   const input=validateInput(body);
-  const result=await generateReport(input,{apiKey:process.env.GEMINI_API_KEY,model:process.env.GEMINI_MODEL||'gemini-3.8-flash'});
+  const result=await generateReport(input,{apiKey:process.env.GEMINI_API_KEY,model:process.env.GEMINI_MODEL||'gemini-3.5-flash-lite'});
   return res.status(200).json(result);
  }catch(err){return res.status(err instanceof AppError?err.status:500).json({error:err instanceof AppError?err.message:'Analysis failed. Please try again.'});}
 }
