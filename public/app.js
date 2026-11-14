@@ -50,7 +50,7 @@ $('#analysis-form').addEventListener('submit',async e=>{
  $('#empty-state').hidden=true;$('#report').hidden=true;$('#loading').hidden=false;$('#results-column').setAttribute('aria-busy','true');
  const input={resume:$('#resume').value,job:$('#job').value,track:$('#track').value,language:$('#language').value,promptVersion:$('#prompt').value};
  try{
-  const response=await fetch('/api/analyze',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(input),signal:AbortSignal.timeout(55000)});
+  const response=await fetch('/api/analyze',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(input),signal:AbortSignal.timeout(110000)});
   let data;try{data=await response.json();}catch{throw new Error('The server returned an unreadable response. Check the deployment.');}
   if(!response.ok)throw new Error(data.error||'Analysis failed. Please try again.');
   if(!data.report||!data.meta)throw new Error('The response was incomplete. Please try again.');
