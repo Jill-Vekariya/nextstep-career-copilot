@@ -85,7 +85,7 @@ function updateHistory(){const history=readHistory();$('#history-count').textCon
 $('#clear-history').addEventListener('click',()=>{if(readHistory().length&&window.confirm('Delete all saved reports from this device?'))writeHistory([]);});
 for(const b of document.querySelectorAll('.choose-prompt'))b.addEventListener('click',()=>{$('#prompt').value=b.dataset.prompt;setView('analyze');});
 for(const id of ['privacy-open','privacy-footer'])$('#'+id).addEventListener('click',()=>$('#privacy').showModal());$('#privacy-close').addEventListener('click',()=>$('#privacy').close());
-$('#theme').addEventListener('click',()=>{document.body.classList.toggle('dark');try{localStorage.setItem('nextstep-theme',document.body.classList.contains('dark')?'dark':'light');}catch{}});
-try{document.body.classList.toggle('dark',localStorage.getItem('nextstep-theme')==='dark');}catch{}
+$('#theme').addEventListener('click',()=>{document.body.classList.toggle('dark');try{localStorage.setItem('nextstep-theme-cyan-v1',document.body.classList.contains('dark')?'dark':'light');}catch{}});
+try{document.body.classList.toggle('dark',localStorage.getItem('nextstep-theme-cyan-v1')!=='light');}catch{}
 async function status(){try{const res=await fetch('/api/status');if(!res.ok)throw new Error();const data=await res.json();$('#connection').replaceChildren(el('i'),document.createTextNode(data.configured?'Gemini configured · ready to test':'Sample mode · live AI needs a server key'));$('#connection').classList.toggle('ready',data.configured);}catch{$('#connection').replaceChildren(el('i'),document.createTextNode('Server unavailable · sample report works'));}}
 updateCounts();updateHistory();status();
