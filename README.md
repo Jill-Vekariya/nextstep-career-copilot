@@ -48,6 +48,8 @@ Google lists `gemini-3.8-flash` with structured-output support in its [model doc
 npm test
 npm run build
 npm run evaluate
+# Or use the key stored on the deployed server:
+npm run evaluate -- --url https://nextstep-career-copilot.vercel.app/
 ```
 
 The backend suite covers schema validation, exact evidence, keyword checks, bounded scoring, provider error responses and request controls. The evaluation command uses the configured Gemini key, checks model access and writes five structured reports plus a results table to `docs/EVALUATION.md`. See [the evaluation cases](docs/EVALUATION.md) and [verification evidence](docs/VERIFICATION.md).
